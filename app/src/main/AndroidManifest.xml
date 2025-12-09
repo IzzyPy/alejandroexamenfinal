@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- ===================================================================== -->
+    <!--                             PERMISOS                                  -->
+    <!-- ===================================================================== -->
+
+    <!-- Permiso para que la aplicación pueda conectarse a Internet -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- Permiso para declarar el uso de la cámara (opcional) -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+
+    <!-- ===================================================================== -->
+    <!--                           APLICACIÓN                                  -->
+    <!-- ===================================================================== -->
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MantenimientoVehiculos">
+
+        <!-- Tu actividad principal, que se lanza al inicio -->
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Otras actividades de la aplicación -->
+        <activity
+            android:name=".ui.AddVehicleActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.VehicleDetailActivity"
+            android:exported="false" />
+
+        <!-- === INICIO DE LA CORRECCIÓN === -->
+        <!-- Declaramos la nueva LogActivity para que el sistema la reconozca. -->
+        <activity
+            android:name=".ui.LogActivity"
+            android:exported="false" />
+        <!-- === FIN DE LA CORRECCIÓN === -->
+
+        <!-- Proveedor de archivos para la cámara -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+    </application>
+
+</manifest>
