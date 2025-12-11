@@ -1,4 +1,4 @@
-📘 README.md — Sistema de Mantenimiento de Vehículos
+ README.md — Sistema de Mantenimiento de Vehículos
 🚗 Sistema de Mantenimiento de Vehículos
 
 Aplicación desarrollada para la gestión completa de vehículos, incluyendo registro, historial, fotografías, sincronización con servidor y control de mantenimientos realizados.
