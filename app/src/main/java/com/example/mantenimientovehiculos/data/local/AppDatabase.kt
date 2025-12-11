@@ -5,7 +5,7 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-
+//ygewtgduf
 // --- INICIO DE LA MODIFICACIÓN ---
 // 1. Añadimos LogEntry::class a la lista de entidades.
 // 2. Incrementamos la versión de la base de datos a 4 para que Room detecte el cambio.
